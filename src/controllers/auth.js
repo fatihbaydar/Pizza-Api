@@ -53,7 +53,8 @@ module.exports = {
             isAdmin:user.isAdmin,
         }
         // convert to jwt
-        const accessToken = jwt.sign(accessData, process.env.ACCESS_KEY, {expiresIn:"30m"})
+        // const accessToken = jwt.sign(accessData, process.env.ACCESS_KEY, {expiresIn:"30m"})
+        const accessToken = jwt.sign(user.toJSON(), process.env.ACCESS_KEY, {expiresIn:"30m"})
 
         // Refresh Token
         const refreshData = {
