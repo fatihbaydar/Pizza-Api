@@ -135,12 +135,18 @@ module.exports = {
         const tokenKey = auth ? auth.split(" ") : null
         let deleted = null
 
-        if (tokenKey?.at(0) == "Token") {
+        if (tokenKey[0] == "Token") {
             deleted = await Token.deleteOne({ token: tokenKey[1] })
+            res.send({
+                error: false,
+                message: "Token deleted. Logout was OK.",
+                deleted
+              });
+        }else if (tokenKey[0] == "Bearer") {
+            res.send({
+                error:false,
+                message:"JWT: No need any process for logout"
+            })
         }
-        res.send({
-            error: false,
-            message: "Token deleted. Logout was OK.",
-          });
     }
 }
