@@ -45,7 +45,7 @@ app.use(require('./src/middlewares/queryHandler'))
 
 //* EMAIL *NODEMAILER
 
-const nodemailer = require('nodemailer')
+// const nodemailer = require('nodemailer')
 
 // nodemailer.createTestAccount().then((data => console.log(data)))
 
@@ -85,22 +85,22 @@ const nodemailer = require('nodemailer')
 // })
 
 //* YandexMail (yandex)
-const transporter = nodemailer.createTransport({
-    service: 'yandex',
-    auth: {
-        user: 'test@yandex.com',
-        pass: '11' // your email-password
-    }
-})
+// const transporter = nodemailer.createTransport({
+//     service: 'yandex',
+//     auth: {
+//         user: 'test@yandex.com',
+//         pass: '11' // your email-password
+//     }
+// })
 
-transporter.sendMail({ 
-    to: "fatihbaydar2004@gmail.com",
-    subject: "Hello",
-    text: "Hello. Welcome to our website...",
-    html: "<h3>Hello. Welcome to our website...</h3><p>How are you?</p>"
-}, function (error, success) {
-    success ? console.log("SUCCESS:", success) : console.log("ERROR:", error)
-}) 
+// transporter.sendMail({ 
+//     to: "fatihbaydar2004@gmail.com",
+//     subject: "Hello",
+//     text: "Hello. Welcome to our website...",
+//     html: "<h3>Hello. Welcome to our website...</h3><p>How are you?</p>"
+// }, function (error, success) {
+//     success ? console.log("SUCCESS:", success) : console.log("ERROR:", error)
+// }) 
 
 /* ------------------------------------------------------- */
 // Routes:
