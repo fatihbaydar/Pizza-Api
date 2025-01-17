@@ -84,16 +84,6 @@ const nodemailer = require('nodemailer')
 //     }
 // })
 
-// transporter.sendMail({ 
-//     to: "fatihbaydar2004@gmail.com",
-//     subject: "Hello",
-//     text: "Hello. Welcome to our website...",
-//     html: "<h3>Hello. Welcome to our website...</h3><p>How are you?</p>"
-// }, function (error, success) {
-//     success ? console.log("SUCCESS:", success) : console.log("ERROR:", error)
-// }) 
-
-
 //* YandexMail (yandex)
 const transporter = nodemailer.createTransport({
     service: 'yandex',
@@ -102,6 +92,15 @@ const transporter = nodemailer.createTransport({
         pass: '11' // your email-password
     }
 })
+
+transporter.sendMail({ 
+    to: "fatihbaydar2004@gmail.com",
+    subject: "Hello",
+    text: "Hello. Welcome to our website...",
+    html: "<h3>Hello. Welcome to our website...</h3><p>How are you?</p>"
+}, function (error, success) {
+    success ? console.log("SUCCESS:", success) : console.log("ERROR:", error)
+}) 
 
 /* ------------------------------------------------------- */
 // Routes:
