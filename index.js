@@ -76,22 +76,32 @@ const nodemailer = require('nodemailer')
 
 //* GoogleMail
 // Google -> AccountHome -> Security -> Two-Step-Verify -> App-Passwords
+// const transporter = nodemailer.createTransport({
+//     service:"gmail",
+//     auth:{
+//         user:"fatihbaydar2004@gmail.com",
+//         pass:"gorc mayj kltq wvpx"
+//     }
+// })
+
+// transporter.sendMail({ 
+//     to: "fatihbaydar2004@gmail.com",
+//     subject: "Hello",
+//     text: "Hello. Welcome to our website...",
+//     html: "<h3>Hello. Welcome to our website...</h3><p>How are you?</p>"
+// }, function (error, success) {
+//     success ? console.log("SUCCESS:", success) : console.log("ERROR:", error)
+// }) 
+
+
+//* YandexMail (yandex)
 const transporter = nodemailer.createTransport({
-    service:"gmail",
-    auth:{
-        user:"fatihbaydar2004@gmail.com",
-        pass:"gorc mayj kltq wvpx"
+    service: 'yandex',
+    auth: {
+        user: 'test@yandex.com',
+        pass: '11' // your email-password
     }
 })
-
-transporter.sendMail({ 
-    to: "fatihbaydar2004@gmail.com",
-    subject: "Hello",
-    text: "Hello. Welcome to our website...",
-    html: "<h3>Hello. Welcome to our website...</h3><p>How are you?</p>"
-}, function (error, success) {
-    success ? console.log("SUCCESS:", success) : console.log("ERROR:", error)
-}) 
 
 /* ------------------------------------------------------- */
 // Routes:
