@@ -28,8 +28,8 @@ router.route("/")
 
 router.route("/:id")
 .get(pizza.read)
-.post(pizza.update)
-.patch(pizza.update)
+.post(upload.array("image"),pizza.update)
+.patch(upload.array("image"),pizza.update)
 .delete(pizza.read)
 
 module.exports = router

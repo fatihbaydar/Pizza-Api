@@ -31,7 +31,18 @@ module.exports = {
             #swagger.tags = ["Pizzas"]
             #swagger.summary = "Create Pizza"
         */
-       const data = await Pizza.create(req.body)
+     
+    //    console.log("file", req.file) // upload.single()
+    //    console.log("files", req.files) // uplaod.array() || upload.any()
+
+    req.body.images = []
+    if(req.files){
+        for(let file of req.files){
+            req.body.images.push(file.path)
+        }
+    }
+
+    const data = await Pizza.create(req.body)
 
        res.status(201).send({
         error:false,
