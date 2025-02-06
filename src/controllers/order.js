@@ -30,6 +30,13 @@ module.exports = {
         /*
         #swagger.tags = ["Orders"]
         #swagger.summary = "Create Order"
+        #swagger.parameters["body"] = {
+            in: "body",
+            required: true,
+            schema: {
+                $ref: "#/definitions/Order"
+            }
+        }
         */
         const data = await Order.create(req.body)
 
@@ -56,6 +63,13 @@ module.exports = {
         /*
            #swagger.tags = ["Orders"]
            #swagger.summary = "Update Order"
+           #swagger.parameters["body"] = {
+                in: "body",
+                required: true,
+                schema: {
+                    $ref: "#/definitions/Order"
+            }
+        }
        */
         const data = await Order.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
 

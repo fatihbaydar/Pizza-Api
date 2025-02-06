@@ -30,6 +30,13 @@ module.exports = {
         /*
             #swagger.tags = ["Pizzas"]
             #swagger.summary = "Create Pizza"
+            #swagger.parameters["body"] = {
+                in: "body",
+                required: true,
+                schema: {
+                    $ref: "#/definitions/Pizza"
+            }
+        }
         */
      
     //    console.log("file", req.file) // upload.single()
@@ -68,6 +75,13 @@ module.exports = {
         /*
             #swagger.tags = ["Pizzas"]
             #swagger.summary = "Update Pizza"
+            #swagger.parameters["body"] = {
+                in: "body",
+                required: true,
+                schema: {
+                    $ref: "#/definitions/Pizza"
+            }
+        }
         */
        const data = await Pizza.updateOne({_id:req.params.id}, req.body, {runValidators:true})
 

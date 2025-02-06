@@ -17,6 +17,25 @@ const app = express()
 // envVariables to process.env:
 require('dotenv').config()
 const PORT = process.env?.PORT || 8000
+/* ------------------------------------------------------- */
+
+//* JSON
+const path = require("path");
+app.use("/documents/json", (req, res) => { 
+    res.sendFile(path.join(__dirname, "src/configs/swagger.json"));
+});
+
+//* SWAGGER
+
+const swaggerUi = require("swagger-ui-express")
+const swaggerJson = require("./src/configs/swagger.json")
+app.use("/documents/swagger", swaggerUi.serve, swaggerUi.setup(swaggerJson, { swaggerOptions: { persistAuthorization: true } }))
+
+//* REDOC
+
+const redoc = require("redoc-express")
+app.use("/documents/redoc", redoc({ specUrl: "/documents/json", title: "Redoc UI" }))
+/* ------------------------------------------------------- */
 
 // asyncErrors to errorHandler:
 require('express-async-errors')

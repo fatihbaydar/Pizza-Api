@@ -31,6 +31,13 @@ module.exports = {
         /*
             #swagger.tags = ["Toppings"]
             #swagger.summary = "Create Topping"
+            #swagger.parameters["body"] = {
+                in: "body",
+                required: true,
+                schema: {
+                    $ref: "#/definitions/Topping"
+            }
+        }
         */
 
         const data = await Topping.create(req.body)
@@ -58,6 +65,13 @@ module.exports = {
         /*
             #swagger.tags = ["Toppings"]
             #swagger.summary = "Update Topping"
+            #swagger.parameters["body"] = {
+                in: "body",
+                required: true,
+                schema: {
+                    $ref: "#/definitions/Topping"
+            }
+        }
         */
         const data = await Topping.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
 

@@ -12,8 +12,8 @@ const document = {
 		version: packageJson.version,
 		title: packageJson.title,
 		description: packageJson.description,
-		termsOfService: "http://www.clarusway.com/#",
-		contact: { name: packageJson.author, email: "qadir@clarusway.com" },
+		termsOfService: "http://127.0.0.1:",
+		contact: { name: packageJson.author, email: "baydar@baydar.com" },
 		license: { name: packageJson.license, },
 	},
 	host: `${HOST}:${PORT}`,
@@ -37,8 +37,10 @@ const document = {
 	},
 	security: [{ Token: [] }, { Bearer: [] }],
 	definitions: {
-		// Models:
-		// "User": require('./src/models/user').schema.obj,
+		"Order": require("./src/models/order").schema.obj,
+		"Pizza": require("./src/models/pizza").schema.obj,
+		"Topping": require("./src/models/topping").schema.obj,
+		"User": require("./src/models/user").schema.obj
 	}
 }
 
